@@ -1,0 +1,14 @@
+.Content p {
+  font-size: 14px;
+}
+
+.ContentRowList .list-group {
+  max-width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ContentRowList h5 {
+  text-align: center;
+  margin-bottom: 0.75em;
+}

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - app/node_modules
+script:
+  - npm install --prefix app/
+  - npm test --prefix app/
+  - npm run build --prefix app/
+on:
+  branch: master

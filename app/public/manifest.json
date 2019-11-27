@@ -1,0 +1,9 @@
+{
+  "short_name": "ITADM Webapp",
+  "name": "IT Administrator (IHK)",
+  "icons": [],
+  "start_url": "itadm.akmnn.de",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
