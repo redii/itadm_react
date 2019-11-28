@@ -1,0 +1,13 @@
+.Hint {
+  text-align: center;
+}
+
+.Hint .btn {
+  margin-bottom: 1em;
+  width: 30%;
+}
+
+.Hint .collapsing, .Hint .collapse {
+  margin: 0 auto;
+  width: 70%;
+}

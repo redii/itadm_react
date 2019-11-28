@@ -1,15 +1,15 @@
-.CourseSectionHeader h1 {
+.Header h1 {
   display: inline;
 }
 
-.CourseSectionHeader .lead {
+.Header .lead {
   display: inline;
 }
 
-.CourseSectionHeader .text-muted {
+.Header .text-muted {
   display: inline;
 }
 
-.CourseSectionHeader button {
+.Header button {
   float: right;
 }

@@ -1,0 +1,14 @@
+.Content.List h5 {
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.Content.List .list-group {
+  max-width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Content.List .list-group-item:hover {
+  cursor: pointer;
+}

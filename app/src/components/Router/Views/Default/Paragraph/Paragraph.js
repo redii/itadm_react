@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import './ContentRow.css'
+import './Paragraph.css'
 
-class ContentRow extends Component {
+class Paragraph extends Component {
 
   constructor(props) {
     super(props)
@@ -10,14 +10,14 @@ class ContentRow extends Component {
 
   render() {
     return (
-      <div className="Content ContentRow">
+      <div className="Content Paragraph">
+        <hr />
         <h5>{this.props.title}</h5>
         <span>{this.props.body}</span>
-        <hr />
       </div>
     )
   }
 
 }
 
-export default ContentRow
+export default Paragraph

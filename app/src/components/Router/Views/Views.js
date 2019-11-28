@@ -20,11 +20,10 @@ class Views extends Component {
         path={route.path}
         exact={route.exact}
         component={() =>
-          <route.component
+          <route.layout
             key={route.key}
-            path={route.path}
             name={route.name}
-            {...route.props}
+            {...route}
           />
         }
       />
@@ -34,7 +33,7 @@ class Views extends Component {
   recursiveBuild(routes) {
     return routes.map(route => {
       let result = []
-      if (route.subs.length > 0) {
+      if (route.subs && route.subs.length > 0) {
         result.push(this.recursiveBuild(route.subs))
       }
       result.push(this.buildView(route))
@@ -43,7 +42,8 @@ class Views extends Component {
   }
 
   render() {
-    return this.recursiveBuild(viewsArray)
+    const result = this.recursiveBuild(viewsArray)
+    return result
   }
 
 }

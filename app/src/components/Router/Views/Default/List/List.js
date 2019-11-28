@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './ContentRowList.css'
+import './List.css'
 
 import history from 'utils/history'
 import { ListGroup, ListGroupItem } from 'reactstrap'
 
-class ContentRowList extends Component {
+class List extends Component {
 
   constructor(props) {
     super(props)
@@ -21,6 +21,7 @@ class ContentRowList extends Component {
               key={idx}
               onClick={() => history.push(item.destination)}
               disabled={item.disabled}
+              className={item.disabled ? "text-muted" : ""}
               action>
               {item.body}
             </ListGroupItem>
@@ -32,14 +33,14 @@ class ContentRowList extends Component {
 
   render() {
     return (
-      <div className="Content ContentRowList">
+      <div className="Content List">
+        <hr />
         <h5>{this.props.title}</h5>
         {this.buildList()}
-        <hr />
       </div>
     )
   }
 
 }
 
-export default ContentRowList
+export default List
