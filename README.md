@@ -35,7 +35,7 @@ Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) s
 Sollten Sie die Webapp dauerhaft und produktiv betreiben wollen, wird ein einfacher Webserver wie z.B. [Apache2](https://httpd.apache.org/) benötigt, um die Build-Dateien auszuliefern.
 
 ## ✔ ToDo
-- [ ] Foliensätze bereitstellen
+- [x] Foliensätze bereitstellen
   - ggf. Download aus GDrive
 - [ ] Authentifizierung bei VPS Zugangsdaten
   - würde Backend benötigen ggf. externer Dienst?
