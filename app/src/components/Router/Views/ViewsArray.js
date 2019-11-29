@@ -104,11 +104,11 @@ const viewsArray = [
       },
       {
         type: "paragraph",
-        title: "📜 Foliensätze",
+        title: "💡 Foliensätze",
         body:
           <p>
             Ich habe Ihnen die Foliensätze aus der Vorlesung auch nochmal
-            digital in meinem Google Drive Ordner abgelegt. Den Download finden
+            digital in meinem Google Drive Ordner abgelegt. Die Dateien finden
             Sie <a href="https://drive.google.com/open?id=1jAVLTz3SNmBbfHlRN9A_4Xw7nDfOsEpW" target="_blank" rel="noopener noreferrer">hier</a>.
           </p>
       },
@@ -166,10 +166,10 @@ const viewsArray = [
               <div>
                 <p>
                   Leider hatte ich in der Vergangenheit immer wieder Probleme mit lokal installierten
-                  virtuellen Maschinen in Bezug auf den Netzwerkzugriff und ähnliches, daher habe ich
+                  virtuellen Maschinen in Bezug auf den Netzwerkzugriff gehtabt, weshalb ich
                   Ihnen für die Bearbeitung der Aufgaben sogenannte Virtual Private Servers, kurz
-                  VPS, besorgt. Diese stehen öffentlich im Internet was bedeutet, dass Sie von überall
-                  aus mit einem Internetzugriff diese Maschinen erreichen können.
+                  VPS, besorgt habe. Diese Maschinen sind über das Internet von überall aus erreichbar,
+                  da sie anhand öffentlicher IP-Adressen über das Internet angesprochen werden können.
                 </p>
               </div>
           },
@@ -179,15 +179,15 @@ const viewsArray = [
             body:
               <div>
                 <p>
-                  Die Server habe ich bei dem Cloudanbieter DigitalOcean gemietet, welcher sich vor allem
-                  an Privatpersonen richtet. Über eine moderne Oberfläche können Sie hier Serverhosts und
-                  andere Services einfach, schnell und günstig mieten.
+                  Die Server habe ich bei dem Cloudanbieter DigitalOcean gemietet, welcher seinen Service
+                  auch für Privatpersonen über eine moderne Weboberfläche bereitstellt. Sie können hier
+                  Serversysteme und andere Dienste (Datenbanken etc.) schnell und einfach mieten.
                 </p>
                 <p>
                   Dadurch dass DigitalOcean als Cloudanbieter vollautomatisiert Serverhosts und andere
-                  Dienste in Sekunden schnelle bereitstellen kann, ist auch der gesamte restliche Geschäftsprozess
-                  ähnlich dynamisch. So erfolgt die Abrechnung Ihrer Kosten minutengenau, sodass Sie am
-                  Ende nur das zahlen was Sie auch tatsächlich genutzt haben.
+                  Dienste in Sekunden schnelle bereitstellen kann, ist auch die Abrechnung der Dienste
+                  ähnlich dynamisch. So erfolgt diese Abrechnung Ihrer Kosten minutengenau, sodass Sie am
+                  Ende nur das zahlen was Sie tatsächlich genutzt haben.
                 </p>
                 <p>
                   Wer mich unterstützen möchte kann sich gerne über meinen Referral-Link bei DigitalOcean
@@ -213,9 +213,10 @@ const viewsArray = [
                 <p>
                   Nachdem Sie Putty gestartet haben werden Sie im oberen Bereich ein Feld mit der Beschriftung
                   Host Name sehen. Hier müssen Sie die IP-Adresse Ihres Serversystems eintragen. Mit anschließenden
-                  klicken auf den Open-Button öffnet sich ein neues Fenster, in welchem Sie sich  als root-User
-                  authentifizieren müssen. Zuvor wird Ihnen jedoch beim erstmaligen Verbinden eine Warnung gezeigt,
-                  welche Sie mit OK bestätigen müssen (dazu später mehr).
+                  klicken auf den Open-Button öffnet sich ein neues Fenster, in welchem Sie sich als root-User
+                  authentifizieren müssen. Beim erstmaligen Verbinden wird Ihnen eine Warnung gezeigt werden,
+                  welche Sie mit OK bestätigen müssen (dazu später mehr). Vergeben Sie anschließend ein neues
+                  Kennwort.
                 </p>
               </div>
           },
@@ -289,8 +290,8 @@ const viewsArray = [
                 </p>
                 <p>
                   Beispielsweise können Sie die Domain <strong>itadm.de</strong> für
-                  Ihren Server hinterlegen und anschließend DNS-Einträge wie <strong>www</strong> für
-                  diese definieren. Am Ende sollen Sie eine manuelle Namensauflösung Ihrer
+                  Ihren Server hinterlegen und anschließend DNS-Einträge wie <strong>www</strong>.itamd.de
+                  für diese definieren. Am Ende sollen Sie eine manuelle Namensauflösung Ihrer
                   konfigurierten Domain gegen den Server vornehmen und eine IP-Adresse zurück
                   erhalten. Zum Beispiel die Adresse 1.2.3.4 bei der Auflösung von www.itadm.de.
                 </p>
@@ -318,8 +319,8 @@ const viewsArray = [
               <div>
                 <p>
                   Für die Installation von <strong>bind9</strong> mit Hilfe des
-                  Paketmanagers <strong>apt-get</strong>, müssen Sie das folgende
-                  Command ausführen:
+                  Paketmanagers <strong>apt</strong>, müssen Sie das folgende
+                  Kommando ausführen:
                 </p>
                 <kbd>apt-get install bind9</kbd><br/><br/>
                 <p>
@@ -354,20 +355,48 @@ const viewsArray = [
             type: "paragraph",
             title: '3. Konfiguration des Servers',
             body:
-              <p>
-                Im Installationsverzeichnis finden Sie verschiedene Ordner und Dateien. Wofür gibt
-                es verschiedene Variationen der "named.conf" Konfigurationsdatei?
-              </p>
+              <div>
+                <p>
+                  Im Installationsverzeichnis finden Sie verschiedene Ordner und Dateien.
+                  Darunter auch verschiedene Konfigurationsdateien, welche unter der named.conf
+                  durch includes zusammengeführt werden. Jede dieser Dateien hat daher eine
+                  andere Funktion.
+                </p>
+                <p>
+                  Nehmen Sie die folgenden Konfigurationen am grundlegen Serververhalten in der
+                  passenden Konfigurationsdatei vor.
+                </p>
+                <ul>
+          				<li>recursion yes;</li>
+          				<li>forwarders {"{ 8.8.8.8; 8.8.4.4; };"}</li>
+          				<li>allow-query {"{ any; };"}</li>
+          			</ul>
+                <p className="text-muted">
+                  Achtung! Die Konfigurationen müssen innerhalb der äußeren geschweiften
+                  Klammern {"{ ... }"} hinzugefügt werden.
+                </p>
+                <p className="text-muted">
+                  Eine Zusammenfassung zur Konfiguration von Bind finden Sie <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-14-04#install-bind-on-dns-servers">hier</a>.
+                </p>
+              </div>
           },
           {
             type: "hint",
             body:
               <div>
                 <p>
-                  Nutzen Sie den <strong>cd</strong> Befehl (Change Directory), um in das
-                  Installationsverzeichnis des Bind Servers zu gelangen.
+                  Die Konfigurationsdatei wurde in mehrere Teile gesplittet, um diese logisch voneinander
+                  zu trennen und somit eine Ordnung zu schaffen. Beim einlesen der named.conf werden dann
+                  die Teildateien wieder in eine inkludiert.
                 </p>
-                <kbd>cd /etc/bind</kbd>
+                <p>
+                  Die Kofiguration der Grundlegenden Funktionsweise wird bei dieser Aufteilung in der
+                  "named.conf.options" vorgenommen. Öffne nen Sie diese mit Hilfe von nano.
+                </p>
+                <kbd>nano /etc/bind/named.conf.options</kbd><br/><br/>
+                <p><strong>recursion yes;</strong> Erlaubt rekursives Auflösen von Domains für einen Client.</p>
+                <p><strong>forwarders {"{ 8.8.8.8; 8.8.4.4; };"}</strong> Der Server leitet Anfragen für die er selber keine Lösung kennt, an den Google DNS Service weiter.</p>
+                <p><strong>allow-query {"{ any; };"}</strong> Erlaubt Anfragen von jedem System bzw. jeder Source IP-Adresse.</p>
               </div>
           },
         ]

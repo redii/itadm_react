@@ -1,17 +1,17 @@
 # Webanwendung zum IT-Administrator (IHK)
-[![Build Status](https://travis-ci.org/redii/itadm-webapp.svg?branch=master)](https://travis-ci.org/redii/itadm)
+[![Build Status](https://travis-ci.org/redii/itadm.svg?branch=master)](https://travis-ci.org/redii/itadm)
 [![dependencies](https://david-dm.org/redii/itadm.svg)](https://david-dm.org/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## 👨‍🎓 Über diese Anwendung...
 Gelegentlich unterrichte ich am TA Bildungszentrum in dem Lehrgang **IT-Administrator (IHK)** verschiedene fachbezogene IT-Themen. Für diese Tätigkeit habe ich ursprünglich eine Plattform benötigt, über welche ich meine **Unterrichtsunterlagen sowie Aufgabenstellungen** für Teilnehmer schnell und einfach zugänglich zur Verfügung stellen kann. Aus diesem Anspruch heraus ist in mehreren Iterationen eben diese Webanwendung entstanden.
 
-Nachdem ich anfänglich eine einfache statische HTML Webseite zusammengebastelt hatte, habe ich mich noch einmal umentschieden und das Projekt doch ein wenig zeitgemäßer aufgezogen. Somit habe ich mit Hilfe verschiedener moderner Frameworks aus der ehemals statischen HTML-Webseite eine **dynamische Single-Page-Webanwendung** gebaut, welche es mir ermöglicht die Inhalte schnell und einfach anzupassen und für die Teilnehmer bereitzustellen.
+Nachdem ich anfänglich eine einfache statische HTML Webseite zusammengebastelt hatte, habe ich mich noch einmal umentschieden und das Projekt doch ein wenig umfangreicher aufgezogen. Somit habe ich mit Hilfe verschiedener moderner Frameworks aus der ehemals statischen HTML-Webseite eine **dynamische Single-Page-Webanwendung** gebaut, welche es mir ermöglicht die Inhalte schnell und einfach anzupassen und für die Teilnehmer bereitzustellen.
 
 Alle auf der Webseite dargestellten Inhalte sind vollständig im Frontend gespeichert, sodass **kein gesondertes Backend benötigt** wird. Das heißt alle Daten sind in diesem Repository zu finden, frei und öffentlich zugänglich wie auch der open-source Code zur Webapp. Die Webseite ist unter [itadm.akmnn.de](https://itadm.akmnn.de) zu finden.
 
 ## 🚀 Abhängigkeiten
-Die Webanwendung selber ist nicht besonders komplex und bietet nur einen sehr begrenzten Funktionsumfang, daher sollten nicht zu viele überflüssige Abhängigkeiten mit in das Projekt zu laden und die Anwendung so möglichst schlank zu halten. Folgene Module wurden bisher genutzt:
+Die Webanwendung selber ist nicht besonders komplex und bietet nur einen begrenzten Funktionsumfang, daher sollten nicht zu viele überflüssige Abhängigkeiten mit in das Projekt zu laden um die Anwendung so möglichst schlank zu halten. Folgene Module wurden bisher genutzt:
 - [React](https://reactjs.org/) - Frontend Framework
 - [Reactstrap](https://reactstrap.github.io/) - Bootstrap Komponenten für React
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
@@ -22,6 +22,7 @@ Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der
 Die dafür relevanten Komponenten sind im Verzeichnis ```/app/src/components/Router/Views/*``` zu finden.
 - [Views.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Views.js) - Logik zum generieren der Unterseiten
 - [ViewsArray.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/ViewsArray.js) - Daten und Inhalte der Webseite
+- [Default](https://github.com/redii/itadm/tree/master/app/src/components/Router/Views/Default) - Enthält Layout als auch Content Komponenten
 
 ## 🛠 Installation
 Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) sind für den Betrieb der Webapp notwendig. Sobald Sie die Programme installiert haben können Sie den Schritten folgen:
