@@ -104,10 +104,20 @@ const viewsArray = [
       },
       {
         type: "paragraph",
+        title: "📜 Foliensätze",
+        body:
+          <p>
+            Ich habe Ihnen die Foliensätze aus der Vorlesung auch nochmal
+            digital in meinem Google Drive Ordner abgelegt. Den Download finden
+            Sie <a href="https://drive.google.com/open?id=1jAVLTz3SNmBbfHlRN9A_4Xw7nDfOsEpW" target="_blank" rel="noopener noreferrer">hier</a>.
+          </p>
+      },
+      {
+        type: "paragraph",
         title: "🔑 Bevor wir anfangen...",
         body:
           <p>
-            <a onClick={() => history.push('/server/vps')}>Hier</a> finden
+            <span className="history" onClick={() => history.push('/server/vps')}>Hier</span> finden
             Sie die Zugangsdaten Ihrer Test-Server. Nutzen Sie diese um sich
             mit dem System zu verbinden und die Aufgaben zu bearbeiten.
           </p>
@@ -203,15 +213,29 @@ const viewsArray = [
                 <p>
                   Nachdem Sie Putty gestartet haben werden Sie im oberen Bereich ein Feld mit der Beschriftung
                   Host Name sehen. Hier müssen Sie die IP-Adresse Ihres Serversystems eintragen. Mit anschließenden
-                  klicken auf den Open-Button öffnet sich ein neues Fenster, welchem Sie sich in der Kommandozeile
-                  des Servers als root-User authentifizieren müssen. Zuvor wird Ihnen jedoch beim erstmaligen
-                  Verbinden eine Warnung gezeigt, welche Sie mit OK bestätigen müssen (dazu später mehr).
+                  klicken auf den Open-Button öffnet sich ein neues Fenster, in welchem Sie sich  als root-User
+                  authentifizieren müssen. Zuvor wird Ihnen jedoch beim erstmaligen Verbinden eine Warnung gezeigt,
+                  welche Sie mit OK bestätigen müssen (dazu später mehr).
                 </p>
               </div>
           },
           {
             type: "table",
-            columns: ["IP", "Benutzer", "Passwort"],
+            title: "Zugangsdaten",
+            columns: [
+              {
+                name: "IP-Adresse",
+                property: "ip"
+              },
+              {
+                name: "Benutzer",
+                property: "user"
+              },
+              {
+                name: "Passwort",
+                property: "ip"
+              }
+            ],
             rows: [
               {
                 ip: "123.123.123.123",
@@ -254,6 +278,26 @@ const viewsArray = [
           },
           {
             type: "paragraph",
+            title: 'Ziel der Aufgabe',
+            body:
+              <div>
+                <p>
+                  Die Aufgabe besteht darin einen Bind Nameserver auf Ihrem System
+                  zu installieren und anschließend zu konfigurieren. Das grobe Ziel
+                  ist dass Ihr Server für eine Domain zuständig ist und die DNS-Einträge
+                  für diese verwaltet.
+                </p>
+                <p>
+                  Beispielsweise können Sie die Domain <strong>itadm.de</strong> für
+                  Ihren Server hinterlegen und anschließend DNS-Einträge wie <strong>www</strong> für
+                  diese definieren. Am Ende sollen Sie eine manuelle Namensauflösung Ihrer
+                  konfigurierten Domain gegen den Server vornehmen und eine IP-Adresse zurück
+                  erhalten. Zum Beispiel die Adresse 1.2.3.4 bei der Auflösung von www.itadm.de.
+                </p>
+              </div>
+          },
+          {
+            type: "paragraph",
             title: '1. Installieren Sie das "bind9" Paket auf Ihrem System',
             body:
               <div>
@@ -270,6 +314,61 @@ const viewsArray = [
           },
           {
             type: "hint",
+            body:
+              <div>
+                <p>
+                  Für die Installation von <strong>bind9</strong> mit Hilfe des
+                  Paketmanagers <strong>apt-get</strong>, müssen Sie das folgende
+                  Command ausführen:
+                </p>
+                <kbd>apt-get install bind9</kbd><br/><br/>
+                <p>
+                  Sollte es wegen fehlenden Berechtigungen während der Installation
+                  zu Problemen kommen, können Sie mit dem Zusatz <kbd>sudo</kbd> vor
+                  dem apt-get Kommando die benötigten Rechte erlangen.
+                </p>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '2. Öffnen Sie das Installationsverzeichnis des Bind Servers',
+            body:
+              <p>
+                Unter Linux werden Softwarepakete in der Regel im <strong>/etc</strong> Verzeichnis
+                in einem eigenen Ordner installiert. Nutzen Sie die bekannten Befehle, um in diesen
+                Ordner zu gelangen.
+              </p>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Nutzen Sie den <strong>cd</strong> Befehl (Change Directory), um in das
+                  Installationsverzeichnis des Bind Servers zu gelangen.
+                </p>
+                <kbd>cd /etc/bind</kbd>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '3. Konfiguration des Servers',
+            body:
+              <p>
+                Im Installationsverzeichnis finden Sie verschiedene Ordner und Dateien. Wofür gibt
+                es verschiedene Variationen der "named.conf" Konfigurationsdatei?
+              </p>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Nutzen Sie den <strong>cd</strong> Befehl (Change Directory), um in das
+                  Installationsverzeichnis des Bind Servers zu gelangen.
+                </p>
+                <kbd>cd /etc/bind</kbd>
+              </div>
           },
         ]
       }

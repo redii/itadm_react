@@ -17,20 +17,19 @@ Die Webanwendung selber ist nicht besonders komplex und bietet nur einen sehr be
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
 
 ## ⚙ Funktionsweise
-Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen verschiedene Unterseiten. Als Vorlage dient dabei in der Regel der Default-Component, welche die grobe Form der Unterseiten vorgibt. Dieser wiederum nutzt verschiedene Content-Komponenten ([Paragraph](), [List]() und [Hint]()) und Inhalte darzustellen.
+Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.
 
 Die dafür relevanten Komponenten sind im Verzeichnis ```/app/src/components/Router/Views/*``` zu finden.
 - [Views.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Views.js) - Logik zum generieren der Unterseiten
-- [ViewsArray.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/ViewsArray.js) -
-daten zu den Unterseiten
+- [ViewsArray.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/ViewsArray.js) - Daten und Inhalte der Webseite
 
 ## 🛠 Installation
-Die Programme [node](https://nodejs.org/en/) und [npm](https://www.npmjs.com/) sind für den Betrieb der Webapp zwingend notwendig. Nach der Installation der Programme können Sie nach der folgenden Checkliste vorgehen:
+Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) sind für den Betrieb der Webapp notwendig. Sobald Sie die Programme installiert haben können Sie den Schritten folgen:
 
 1. Klonen Sie das Repository auf ihr System
 2. Führen Sie den ```npm install``` Befehl im ```app/``` Verzeichnis aus
 3. Starten Sie mit ```npm start``` die Webapp auf einem adhoc Devserver
-4. oder bauen Sie mit ```npm build``` eine Build-Version für den produktiven Betrieb
+4. oder bauen Sie mit ```npm run build``` eine Build-Version für den produktiven Betrieb
 
 Sollten Sie die Webapp dauerhaft und produktiv betreiben wollen, wird ein einfacher Webserver wie z.B. [Apache2](https://httpd.apache.org/) benötigt, um die Build-Dateien auszuliefern.
 

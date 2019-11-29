@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Hint.css'
 
-import { Collapse, Button, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
+import { Collapse, Button, Card, CardBody, CardTitle, CardText } from 'reactstrap'
+// CardImg, CardSubtitle
 
 class Hint extends Component {
 
@@ -32,10 +33,8 @@ class Hint extends Component {
           <Card>
             {image}
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-              enim eiusmod high life accusamus terry richardson ad squid. Nihil
-              anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident.
+              <CardTitle>{this.props.title}</CardTitle>
+              <CardText>{this.props.body}</CardText>
             </CardBody>
           </Card>
         </Collapse>

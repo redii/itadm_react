@@ -14,19 +14,18 @@ class Table extends Component {
     return (
       <div className="Table">
         <hr />
+        <h5>{this.props.title}</h5>
         <RSTable>
           <thead>
             <tr>
-              {this.props.columns.map((column, idx) => <th key={idx}>{column}</th>)}
+              {this.props.columns.map((column, idx) => <th key={idx}>{column.name}</th>)}
             </tr>
           </thead>
           <tbody>
             {this.props.rows.map((row, idx) => {
               return (
                 <tr key={idx}>
-                  <td>{row.ip}</td>
-                  <td>{row.user}</td>
-                  <td>{row.pass}</td>
+                  {this.props.columns.map((column, idx) => <td key={idx}>{row[column.property]}</td>)}
                 </tr>
               )
             }, this)}

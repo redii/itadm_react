@@ -1,3 +1,11 @@
 .Content.Paragraph p {
   font-size: 14px;
 }
+
+.Content.Paragraph .history {
+  color: #007bff
+}
+
+.Content.Paragraph .history:hover {
+  cursor: pointer;
+}
