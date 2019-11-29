@@ -24,20 +24,20 @@ const viewsArray = [
         body:
           <div>
             <p>
-              Ursprünglich benötigte ich eine Möglichkeit um Ihnen Aufgaben,
-              Hilfestellungen und sonstige Informationen schnell und einfach
-              zur Verfügung stellen zu können. Aus dieser Motivation heraus
-              entstand eben diese Webanwendung.
+              Meine Idee war es eine Plattform zu schaffen über welche ich
+              meine Unterlagen, Hilfestellungen und Aufgaben schnell und einfach
+              für Teilnehmer der Kurse bereitstellen kann. Aus dieser Idee ist
+              eben diese Anwendung entstanden.
             </p>
             <p>
-              Wer einmal hinter die Kulissen dieser Anwendung gucken möchte,
+              Wer einmal hinter die Kulissen der Anwendung gucken möchte,
               kann dies im dazugehörigen Projekt, <a href="https://github.com/redii/itadm" target="_blank" rel="noopener noreferrer">hier</a> tun.
               Dort habe ich zudem Teile der Anwendung erklärt und zusätzlich
               genutzte Frameworks aufgelistet. Bei konkreten Fragen können
               Sie mich auch gerne nochmal direkt darauf ansprechen.
             </p>
             <p>
-              Beginnen Sie damit das aktuelle Vorlesungsthema unten auszuwählen...
+              Beginnen Sie damit das aktuelle Vorlesungsthema unten auszuwählen.
             </p>
           </div>
       },
