@@ -1,5 +1,5 @@
-language: node_js
 os: linux
+language: node_js
 node_js:
   - "stable"
 cache:
@@ -11,10 +11,9 @@ script:
   - npm run build
 before_deploy:
   - zip build.zip build/*
-  - ls -l
 deploy:
   provider: releases
   token: $github_token
-  file: ${TRAVIS_BUILD_DIR}/redii/itadm/build.zip
+  file: ${TRAVIS_BUILD_DIR}/build.zip
   cleanup: false
   draft: true
