@@ -9,9 +9,12 @@ script:
   - npm install --prefix app/
   - npm test --prefix app/
   - npm run build --prefix app/
+before_deploy:
+  cd app/build
+  zip build.zip
 deploy:
   provider: releases
   token: $github_token
-  file: app/build/*
+  file: "build.zip"
   cleanup: false
   draft: true
