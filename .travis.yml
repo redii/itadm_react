@@ -1,4 +1,5 @@
 language: node_js
+os: linux
 node_js:
   - "stable"
 cache:
@@ -8,5 +9,10 @@ script:
   - npm install --prefix app/
   - npm test --prefix app/
   - npm run build --prefix app/
-on:
-  branch: master
+deploy:
+  provider: releases
+  api_key: $github_token
+  file: "itadm_release"
+  skip_cleanup: true
+  on:
+    tags: true
