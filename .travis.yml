@@ -11,11 +11,9 @@ script:
   - npm run build
 before_deploy:
   - zip build.zip build/*
-  - pwd
-  - ls -l
 deploy:
   provider: releases
   token: $github_token
-  file: ${TRAVIS_BUILD_DIR}/build.zip
+  file: build.zip
   cleanup: false
   draft: true
