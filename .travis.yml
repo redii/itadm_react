@@ -11,8 +11,7 @@ script:
   - npm run build --prefix app/
 deploy:
   provider: releases
-  api_key: $github_token
+  token: $github_token
   file: "itadm_release"
-  skip_cleanup: true
-  on:
-    tags: true
+  cleanup: false
+  draft: true
