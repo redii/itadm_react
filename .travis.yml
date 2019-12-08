@@ -6,13 +6,11 @@ cache:
   directories:
     - app/node_modules
 script:
-  - npm install --prefix app/
-  - npm test --prefix app/
-  - npm run build --prefix app/
+  - npm install
+  - npm test
+  - npm run build
 before_deploy:
-  - cd app/
   - zip build.zip build/*
-  - ls -l ..
 deploy:
   provider: releases
   token: $github_token

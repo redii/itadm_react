@@ -17,18 +17,18 @@ Die Webanwendung selber ist nicht besonders komplex und bietet nur einen begrenz
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
 
 ## ⚙ Funktionsweise
-Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.
+Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.
 
-Die dafür relevanten Komponenten sind im Verzeichnis ```/app/src/components/Router/Views/*``` zu finden.
-- [Views.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/Views.js) - Logik zum generieren der Unterseiten
-- [ViewsArray.js](https://github.com/redii/itadm/blob/master/app/src/components/Router/Views/ViewsArray.js) - Daten und Inhalte der Webseite
-- [Default](https://github.com/redii/itadm/tree/master/app/src/components/Router/Views/Default) - Enthält Layout als auch Content Komponenten
+Die dafür relevanten Komponenten sind im Verzeichnis ```/src/components/Router/Views/*``` zu finden.
+- [Views.js](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Views.js) - Logik zum generieren der Unterseiten
+- [ViewsArray.js](https://github.com/redii/itadm/blob/master/src/components/Router/Views/ViewsArray.js) - Daten und Inhalte der Webseite
+- [Default](https://github.com/redii/itadm/tree/master/src/components/Router/Views/Default) - Enthält Layout als auch Content Komponenten
 
 ## 🛠 Installation
 Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) sind für den Betrieb der Webapp notwendig. Sobald Sie die Programme installiert haben können Sie den Schritten folgen:
 
 1. Klonen Sie das Repository auf ihr System
-2. Führen Sie den ```npm install``` Befehl im ```app/``` Verzeichnis aus
+2. Führen Sie den ```npm install``` Befehl aus
 3. Starten Sie mit ```npm start``` die Webapp auf einem adhoc Devserver
 4. oder bauen Sie mit ```npm run build``` eine Build-Version für den produktiven Betrieb
 
