@@ -10,11 +10,11 @@ script:
   - npm test --prefix app/
   - npm run build --prefix app/
 before_deploy:
-  cd app/build
-  zip build.zip
+  cd app/
+  zip build.zip build/*
 deploy:
   provider: releases
   token: $github_token
-  file: "build.zip"
+  file: "app/build.zip"
   cleanup: false
   draft: true
