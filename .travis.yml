@@ -12,9 +12,10 @@ script:
 before_deploy:
   - cd app/
   - zip build.zip build/*
+  - ls -l ..
 deploy:
   provider: releases
   token: $github_token
-  file: "app/build.zip"
+  file: "build.zip"
   cleanup: false
   draft: true
