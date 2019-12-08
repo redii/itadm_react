@@ -15,6 +15,6 @@ before_deploy:
 deploy:
   provider: releases
   token: $github_token
-  file: "build.zip"
+  file: ${TRAVIS_BUILD_DIR}/redii/itadm/build.zip
   cleanup: false
   draft: true
