@@ -1,14 +1,14 @@
-.Hint {
+.Content.Hint {
   text-align: center;
   font-size: 14px;
 }
 
-.Hint .btn {
+.Content.Hint .btn {
   margin-bottom: 1em;
   width: 30%;
 }
 
-.Hint .collapsing, .Hint .collapse {
+.Content.Hint .collapsing, .Hint .collapse {
   margin: 0 auto;
   width: 70%;
 }

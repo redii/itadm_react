@@ -165,11 +165,11 @@ const viewsArray = [
             body:
               <div>
                 <p>
-                  Leider hatte ich in der Vergangenheit immer wieder Probleme mit lokal installierten
-                  virtuellen Maschinen in Bezug auf den Netzwerkzugriff gehtabt, weshalb ich
-                  Ihnen für die Bearbeitung der Aufgaben sogenannte Virtual Private Servers, kurz
-                  VPS, besorgt habe. Diese Maschinen sind über das Internet von überall aus erreichbar,
-                  da sie anhand öffentlicher IP-Adressen über das Internet angesprochen werden können.
+                  Leider hatte ich in der Vergangenheit immer wieder Probleme mit dem Netzwerkzugriff
+                  bei lokal installierten virtuellen Maschinen, weshalb ich Ihnen für die Bearbeitung
+                  der Aufgaben sogenannte Virtual Private Servers, kurz VPS, zur Verfügung stelle. Diese
+                  Maschinen sind über das Internet von überall aus erreichbar, da sie anhand öffentlicher
+                  IP-Adressen über das Internet angesprochen werden können.
                 </p>
               </div>
           },
@@ -180,14 +180,15 @@ const viewsArray = [
               <div>
                 <p>
                   Die Server habe ich bei dem Cloudanbieter DigitalOcean gemietet, welcher seinen Service
-                  auch für Privatpersonen über eine moderne Weboberfläche bereitstellt. Sie können hier
-                  Serversysteme und andere Dienste (Datenbanken etc.) schnell und einfach mieten.
+                  auch für Privatpersonen über eine moderne Weboberfläche bereitstellt. Der Service kann
+                  durch jeden genutzt werden, um schnell und einfach Serversysteme und andere Dienste
+                  zu mieten.
                 </p>
                 <p>
-                  Dadurch dass DigitalOcean als Cloudanbieter vollautomatisiert Serverhosts und andere
-                  Dienste in Sekunden schnelle bereitstellen kann, ist auch die Abrechnung der Dienste
-                  ähnlich dynamisch. So erfolgt diese Abrechnung Ihrer Kosten minutengenau, sodass Sie am
-                  Ende nur das zahlen was Sie tatsächlich genutzt haben.
+                  DigitalOcean ist als Cloudanbieter in der Lage Serversysteme und andere Dienste
+                  vollautomatisiert in Sekunden bereitstellen zu können. Auch die Abrechnung der Dienste ist
+                  ähnlich dynamisch, so erfolgt diese minutengenau, sodass Sie am Ende nur das zahlen was Sie
+                  auch genutzt haben.
                 </p>
                 <p>
                   Wer mich unterstützen möchte kann sich gerne über meinen Referral-Link bei DigitalOcean
@@ -211,8 +212,8 @@ const viewsArray = [
                   einfach <a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe">hier</a> herunterladen.
                 </p>
                 <p>
-                  Nachdem Sie Putty gestartet haben werden Sie im oberen Bereich ein Feld mit der Beschriftung
-                  Host Name sehen. Hier müssen Sie die IP-Adresse Ihres Serversystems eintragen. Mit anschließenden
+                  Nachdem Sie Putty gestartet haben werden Sie im oberen Bereich ein Feld mit der Beschriftung <strong>Host Name</strong> sehen.
+                  Hier müssen Sie die IP-Adresse Ihres Serversystems eintragen. Mit anschließenden
                   klicken auf den Open-Button öffnet sich ein neues Fenster, in welchem Sie sich als root-User
                   authentifizieren müssen. Beim erstmaligen Verbinden wird Ihnen eine Warnung gezeigt werden,
                   welche Sie mit OK bestätigen müssen (dazu später mehr). Vergeben Sie anschließend ein neues
@@ -234,7 +235,7 @@ const viewsArray = [
               },
               {
                 name: "Passwort",
-                property: "ip"
+                property: "pass"
               }
             ],
             rows: [
@@ -373,10 +374,8 @@ const viewsArray = [
           			</ul>
                 <p className="text-muted">
                   Achtung! Die Konfigurationen müssen innerhalb der äußeren geschweiften
-                  Klammern {"{ ... }"} hinzugefügt werden.
-                </p>
-                <p className="text-muted">
-                  Eine Zusammenfassung zur Konfiguration von Bind finden Sie <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-14-04#install-bind-on-dns-servers">hier</a>.
+                  Klammern {"{ ... }"} hinzugefügt werden. Eine Zusammenfassung zur Konfiguration
+                  von Bind finden Sie <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-14-04#install-bind-on-dns-servers">hier</a>.
                 </p>
               </div>
           },
@@ -397,6 +396,106 @@ const viewsArray = [
                 <p><strong>recursion yes;</strong> Erlaubt rekursives Auflösen von Domains für einen Client.</p>
                 <p><strong>forwarders {"{ 8.8.8.8; 8.8.4.4; };"}</strong> Der Server leitet Anfragen für die er selber keine Lösung kennt, an den Google DNS Service weiter.</p>
                 <p><strong>allow-query {"{ any; };"}</strong> Erlaubt Anfragen von jedem System bzw. jeder Source IP-Adresse.</p>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '4. Legen Sie eine neue Zone auf dem Server an',
+            body:
+              <div>
+                <p>
+                  Um eine neue Zone bzw. Domain zu definieren, müssen Sie diese in der dafür vorgesehenden Konfugurationsdatei
+                  hinterlegen. Für die Zone können Sie im Anschluss DNS-Einträge definieren, welche dann durch den Server selbst
+                  aufgelöst werden.
+                </p>
+                <p>
+                  Achten Sie darauf den Fully Qualified Domain Name (FQDN) für die Konfiguration zu nutzen.
+                </p>
+                <p className="text-muted">
+                  Eine genauere Anleitung zur Registrierung einer neuen Zone finden Sie
+                  Sie <a href="https://help.ubuntu.com/community/BIND9ServerHowto#Primary_Master_Server_configuration" target="_blank" rel="noopener noreferrer">hier</a>.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Eine neue Domain bzw. Zone kann in der named.conf.local vorgenommenwerden.
+                </p>
+                <kbd>nano /etc/bind/named.conf.local</kbd><br/><br/>
+                <div style={{marginLeft:'10%', textAlign:'left'}}>
+                  <span style={{textIndent:'0'}}>zone "itadm.de." {"{"}</span><br/>
+                  <span style={{marginLeft:'2em'}}>type master;</span><br/>
+                  <span style={{marginLeft:'2em'}}>file "/etc/bind/db.itadm.de";</span><br/>
+                  <span style={{textIndent:'0'}}>{"};"}</span>
+                </div>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '5. Erstellen Sie die dazugehörige Zonendatei',
+            body:
+              <div>
+                <p>
+                  Bei der Konfiguration der Zone haben Sie soeben den Pfad einer Zonendatei angegeben, welche Sie nun erstellen
+                  müssen. In dieser Zonendatei werden die DNS-Einträge bzw. Ressource Records hinterlegt, welche in IP-Adressen
+                  o.ä. aufgelöst werden können.
+                </p>
+                <p>
+                  Sie können die leere Templatedatei <strong>db.empty</strong> als Vorlage nutzen. Hinterlegen Sie in der neu angelegten Datei
+                  anschließend einen Eintrag für die Domain <strong>www.itadm.de</strong> auf eine beliebige IPv4 Adresse.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Kopieren Sie die <strong>db.empty</strong> Datei mit Hilfe des folgenden Kommandos.
+                </p>
+                <kbd>cp db.empty db.itadm.de</kbd><br/><br/>
+                <p>
+                  Öffnen Sie die kopierte Datei anschließend und nehmen Sie die benötigten Konfigurationen vor.
+                </p>
+                <kbd>nano db.itadm.de</kbd><br/><br/>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '6. Starten Sie den Server neu',
+            body:
+              <div>
+                <p>
+                  Damit Ihre gerade vorgenommenen Konfigurationen berücksichtigt werden, müssen Sie den Server zunächst erst einmal
+                  neustarten. Dabei werden die Konfigurationsdateien des Servers neu eingelesen und Ihre Änderungen eingespielt.
+                </p>
+                <p>
+                  Überprüfen Sie ob der Server erfolgreich neugestartet wurden, indem Sie auch den Status des Diensts prüfen. Führen
+                  Sie dafür die folgenden Kommandos aus.
+                </p>
+                Neustart des Servers: <kbd>service bind9 restart</kbd><br/><br/>
+                Statusmeldung des Diensts: <kbd>service bind9 status</kbd>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '7. Nutzen Sie den Server für eine Namensauflösung',
+            body:
+              <div>
+                <p>
+                  Um den Server abschließend zu prüfen, können Sie die konfigurierte Domain bzw. den dafür hinterlegten DNS-Eintrag
+                  manuell abfragen. Wechseln Sie hierfür zurück in Ihr Windows-System und starten Sie von hier aus eine manuelle
+                  Namensauflösung.
+                </p>
+                <p>
+                  Was dabei passiert: Ihr Windows-Rechner spricht Ihren Server über das Internet an und fragt nach der Auflösung der
+                  Domain <strong>www.itadm.de</strong>. Ihr Nameserver sollte dann mit der gerade konfigurierten IP-Adresse antworten.
+                  Führen Sie für die manuelle Namensauflösung in der Windows-Kommandozeile folgendes Kommando aus.
+                </p>
+                Manuelle Namensauflösung: <kbd>nslookup www.itadm.de [IP Ihres Servers]</kbd>
               </div>
           },
         ]

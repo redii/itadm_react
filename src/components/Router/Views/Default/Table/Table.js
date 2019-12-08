@@ -12,7 +12,7 @@ class Table extends Component {
 
   render() {
     return (
-      <div className="Table">
+      <div className="Content Table">
         <hr />
         <h5>{this.props.title}</h5>
         <RSTable>
