@@ -11,6 +11,8 @@ script:
   - npm run build
 before_deploy:
   - zip build.zip build/*
+  - pwd
+  - ls -l
 deploy:
   provider: releases
   token: $github_token
