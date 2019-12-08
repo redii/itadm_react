@@ -1,4 +1,5 @@
 language: node_js
+os: linux
 node_js:
   - "stable"
 cache:
@@ -8,5 +9,13 @@ script:
   - npm install --prefix app/
   - npm test --prefix app/
   - npm run build --prefix app/
-on:
-  branch: master
+before_deploy:
+  - cd app/
+  - zip build.zip build/*
+  - ls -l ..
+deploy:
+  provider: releases
+  token: $github_token
+  file: "build.zip"
+  cleanup: false
+  draft: true
