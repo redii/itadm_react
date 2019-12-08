@@ -12,6 +12,6 @@ script:
 deploy:
   provider: releases
   token: $github_token
-  file: "itadm_release"
+  file: app/build/*
   cleanup: false
   draft: true
