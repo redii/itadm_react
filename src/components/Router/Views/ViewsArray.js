@@ -131,8 +131,7 @@ const viewsArray = [
             destination: "/server/dns"
           }, {
             body: "Webserver",
-            destination: "/server/web",
-            disabled: true
+            destination: "/server/web"
           }, {
             body: "Fileserver",
             destination: "/server/file",
@@ -499,7 +498,43 @@ const viewsArray = [
               </div>
           },
         ]
-      }
+      },
+
+
+      {
+        key: '2.3',
+        name: 'Webserver',
+        path: '/server/web',
+        exact: true,
+        layout: Default,
+        content: [
+          {
+            type: "header",
+            title: "Webserver",
+            subTitle: "Konfigurieren eines Apache Webservers",
+            mutedSubTitle: "unter Ubuntu 18.04"
+          },
+          {
+            type: "paragraph",
+            title: 'Ziel der Aufgabe',
+            body:
+              <div>
+                <p>
+                  Die Aufgabe besteht darin einen Apache Webserver auf Ihrem System
+                  zu installieren und anschließend zu konfigurieren. Das grobe Ziel
+                  ist, dass Sie neben der Apache-Default Seite des Servers eine zweite
+                  Webseite zeitgleich betreiben.
+                </p>
+                <p>
+                  Um eine zweite Webseite zeitgleich zu betreiben, müssen Sie zunächst
+                  einen weiteren Port z.B. 8080 für den Server konfigurieren. Dadurch
+                  können Sie anschließend eine Webseite über den Port 80 und eine andere
+                  über den Port 8080 durch den selber Serverhost betreiben.
+                </p>
+              </div>
+          },
+        ]
+      },
     ],
   },
 ]
