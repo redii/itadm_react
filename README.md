@@ -11,10 +11,11 @@ Nachdem ich anfänglich eine einfache statische HTML Webseite zusammengebastelt 
 Alle auf der Webseite dargestellten Inhalte sind vollständig im Frontend gespeichert, sodass **kein gesondertes Backend benötigt** wird. Das heißt alle Daten sind in diesem Repository zu finden, frei und öffentlich zugänglich wie auch der open-source Code zur Webapp. Die Webseite ist unter [itadm.akmnn.de](https://itadm.akmnn.de) zu finden.
 
 ## 🚀 Abhängigkeiten
-Die Webanwendung selber ist nicht besonders komplex und bietet nur einen begrenzten Funktionsumfang, daher sollten nicht zu viele überflüssige Abhängigkeiten mit in das Projekt zu laden um die Anwendung so möglichst schlank zu halten. Folgene Module wurden bisher genutzt:
+Um zukünftig auch dynamischere Inhalte durch die Webapp zur Verfügung zu stellen, habe ich mich entschieden die Anwendung mit React zu bauen. Davon ab ist der Funktionsumfang allerdings noch begrenzt wie auch die Abhängigkeiten. Aktuell nutzt die Anwendung folgende Module und Frameworks:
 - [React](https://reactjs.org/) - Frontend Framework
 - [Reactstrap](https://reactstrap.github.io/) - Bootstrap Komponenten für React
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
+- [dotenv](https://www.npmjs.com/package/dotenv) - Environment Variables aus .env
 
 ## ⚙ Funktionsweise
 Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.
@@ -35,8 +36,6 @@ Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) s
 Sollten Sie die Webapp dauerhaft und produktiv betreiben wollen, wird ein einfacher Webserver wie z.B. [Apache2](https://httpd.apache.org/) benötigt, um die Build-Dateien auszuliefern.
 
 ## ✔ ToDo
-- [x] Foliensätze bereitstellen
-  - ggf. Download aus GDrive
-- [ ] Authentifizierung bei VPS Zugangsdaten
-  - würde Backend benötigen ggf. externer Dienst?
-- [ ] Inhalte zu Netzwerkadminstration hinzufügen
+- [x] Foliensätze zum download
+- [ ] Serversysteme und Monitoring Inhalte
+- [ ] Netzwerkadminstration Inhalte
