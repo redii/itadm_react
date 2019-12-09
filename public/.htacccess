@@ -1,6 +1,3 @@
-  # Copy into build/ directory
-  # Configuration for Apache2 to proxy routes
-  
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
