@@ -2,19 +2,15 @@ os: linux
 language: node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - node_modules
 script:
   - npm install
   - npm test
   - npm run build
 before_deploy:
-  - zip build.zip build/*
-  - ls -l
+  - zip build_${TRAVIS_COMMIT}.zip build/*
 deploy:
   provider: releases
   token: $github_token
-  file: build.zip
+  file: build_${TRAVIS_COMMIT}.zip
   skip_cleanup: true
   draft: true
