@@ -16,5 +16,5 @@ deploy:
   provider: releases
   token: $github_token
   file: build.zip
-  cleanup: false
+  skip_cleanup: true
   draft: true
