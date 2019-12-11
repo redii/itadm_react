@@ -26,7 +26,7 @@ Die dafür relevanten Komponenten sind im Verzeichnis ```/src/components/Router/
 - [Default](https://github.com/redii/itadm/tree/master/src/components/Router/Views/Default) - Enthält Layout als auch Content Komponenten
 
 ## 🛠 Installation
-Die aktuellste Version der Anwendung können Sie als fertiges Release [hier]() herunterladen. Nachdem Sie die Zip-Datei entpackt haben, können Sie die index.html direkt im Browser öffnen oder durch einen Webserver für eine Menge an Clients bereitstellen. Sollten Sie Änderungen am Code vornehmen wollen benötigen Sie zunächst die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/), um die Anwendung ausführen und für den Produktivbetrieb bauen zu können. Sobald Sie die Programme installiert haben können Sie diesen Schritten folgen:
+Die aktuellste Version der Anwendung können Sie als fertiges Release [hier](https://github.com/redii/itadm/releases) herunterladen. Nachdem Sie die Zip-Datei entpackt haben, können Sie die index.html direkt im Browser öffnen oder durch einen Webserver für eine Menge an Clients bereitstellen. Sollten Sie Änderungen am Code vornehmen wollen benötigen Sie zunächst die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/), um die Anwendung ausführen und für den Produktivbetrieb bauen zu können. Sobald Sie die Programme installiert haben können Sie diesen Schritten folgen:
 
 1. Klonen Sie das Repository auf ihr System
 2. Führen Sie den ```npm install``` Befehl aus
