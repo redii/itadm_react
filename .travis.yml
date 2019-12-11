@@ -7,7 +7,7 @@ script:
   - npm test
   - npm run build
 before_deploy:
-  - zip build_${TRAVIS_COMMIT}.zip build/*
+  - zip -r build_${TRAVIS_COMMIT}.zip build/*
 deploy:
   provider: releases
   token: $github_token
