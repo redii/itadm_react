@@ -290,7 +290,7 @@ const viewsArray = [
                 </p>
                 <p>
                   Beispielsweise können Sie die Domain <strong>itadm.de</strong> für
-                  Ihren Server hinterlegen und anschließend DNS-Einträge wie <strong>www</strong>.itamd.de
+                  Ihren Server hinterlegen und anschließend DNS-Einträge wie <strong>www</strong>.itadm.de
                   für diese definieren. Am Ende sollen Sie eine manuelle Namensauflösung Ihrer
                   konfigurierten Domain gegen den Server vornehmen und eine IP-Adresse zurück
                   erhalten. Zum Beispiel die Adresse 1.2.3.4 bei der Auflösung von www.itadm.de.
@@ -360,11 +360,11 @@ const viewsArray = [
                   Im Installationsverzeichnis finden Sie verschiedene Ordner und Dateien.
                   Darunter auch verschiedene Konfigurationsdateien, welche unter der named.conf
                   durch includes zusammengeführt werden. Jede dieser Dateien hat daher eine
-                  andere Funktion.
+                  eigene Funktion.
                 </p>
                 <p>
                   Nehmen Sie die folgenden Konfigurationen am grundlegen Serververhalten in der
-                  passenden Konfigurationsdatei vor.
+                  passenden Konfigurationsdatei vor. Welche könnte dies sein?
                 </p>
                 <ul>
           				<li>recursion yes;</li>
@@ -405,7 +405,7 @@ const viewsArray = [
                 <p>
                   Um eine neue Zone bzw. Domain zu definieren, müssen Sie diese in der dafür vorgesehenden Konfugurationsdatei
                   hinterlegen. Für die Zone können Sie im Anschluss DNS-Einträge definieren, welche dann durch den Server selbst
-                  aufgelöst werden.
+                  aufgelöst werden können.
                 </p>
                 <p>
                   Achten Sie darauf den Fully Qualified Domain Name (FQDN) für die Konfiguration zu nutzen.
