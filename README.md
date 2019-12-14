@@ -15,7 +15,7 @@ Um zukünftig auch dynamischere Inhalte durch die Webapp zur Verfügung zu stell
 - [React](https://reactjs.org/) - Frontend Framework
 - [Reactstrap](https://reactstrap.github.io/) - Bootstrap Komponenten für React
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
-- [dotenv](https://www.npmjs.com/package/dotenv) - Environment Variables aus .env
+- [dotenv](https://www.npmjs.com/package/dotenv) - Environment Variables aus .env-Datei
 
 ## ⚙ Funktionsweise
 Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.
@@ -26,7 +26,7 @@ Die dafür relevanten Komponenten sind im Verzeichnis ```/src/components/Router/
 - [Default](https://github.com/redii/itadm/tree/master/src/components/Router/Views/Default) - Enthält Layout als auch Content Komponenten
 
 ## 🛠 Installation
-Die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/) sind für den Betrieb der Webapp notwendig. Sobald Sie die Programme installiert haben können Sie den Schritten folgen:
+Die aktuellste Version der Anwendung können Sie als fertiges Release [hier](https://github.com/redii/itadm/releases) herunterladen. Nachdem Sie die Zip-Datei entpackt haben, können Sie die index.html direkt im Browser öffnen oder durch einen Webserver für eine Menge an Clients bereitstellen. Sollten Sie Änderungen am Code vornehmen wollen benötigen Sie zunächst die Programme [node](https://nodejs.org/de/) und [npm](https://www.npmjs.com/), um die Anwendung ausführen und für den Produktivbetrieb bauen zu können. Sobald Sie die Programme installiert haben können Sie diesen Schritten folgen:
 
 1. Klonen Sie das Repository auf ihr System
 2. Führen Sie den ```npm install``` Befehl aus
