@@ -15,7 +15,7 @@ Um zukünftig auch dynamischere Inhalte durch die Webapp zur Verfügung zu stell
 - [React](https://reactjs.org/) - Frontend Framework
 - [Reactstrap](https://reactstrap.github.io/) - Bootstrap Komponenten für React
 - [history](https://www.npmjs.com/package/history) - Navigieren der Browserhistorie
-- [dotenv](https://www.npmjs.com/package/dotenv) - Environment Variables aus .env
+- [dotenv](https://www.npmjs.com/package/dotenv) - Environment Variables aus .env-Datei
 
 ## ⚙ Funktionsweise
 Im Fokus der Webanwendung steht der Views-Component, welcher die Unterseiten der Webapp aus einem Input-Array dynamisch zusammenbaut. Hierfür geht er die Einträge des Arrays nach und nach rekursiv durch und generiert aus den einzelnen Einträgen die verschiedenen Seiten. Der Default-Component legt die grobe Form bzw. das Layout der Seiten fest, während verschiedene Content-Components ([Paragraph](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Paragraph/Paragraph.js), [List](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/List/List.js) und [Table](https://github.com/redii/itadm/blob/master/src/components/Router/Views/Default/Table/Table.js)) genutzt werden, um Inhalte darzustellen.

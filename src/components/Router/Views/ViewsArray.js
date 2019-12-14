@@ -453,7 +453,7 @@ const viewsArray = [
             body:
               <div>
                 <p>
-                  Kopieren Sie die <strong>db.empty</strong> Datei mit Hilfe des folgenden Kommandos.
+                  Kopieren Sie die <strong>db.empty</strong> Datei mit Hilfe des folgenden Kommandos (Copy).
                 </p>
                 <kbd>cp db.empty db.itadm.de</kbd><br/><br/>
                 <p>
@@ -531,6 +531,123 @@ const viewsArray = [
                   können Sie anschließend eine Webseite über den Port 80 und eine andere
                   über den Port 8080 durch den selber Serverhost betreiben.
                 </p>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '1. Installieren Sie das "apache2" Paket auf Ihrem System',
+            body:
+              <div>
+                <p>
+                  Um das Paket auf ihrem System zu installieren nutzen sie das
+                  vorhandene Paketverwaltungssystem. Unter Debian/Ubuntu können
+                  Sie hierfür APT benutzen.
+                </p>
+                <p className="text-muted">
+                  Eine genaue Funktionsbeschreibung zur Bedienung von APT finden
+                  Sie <a href="https://wiki.ubuntuusers.de/apt/apt-get/" target="_blank" rel="noopener noreferrer">hier</a>.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Für die Installation von <strong>apache2</strong> mit Hilfe des
+                  Paketmanagers <strong>apt</strong>, müssen Sie das folgende
+                  Kommando ausführen:
+                </p>
+                <kbd>apt-get install apache2</kbd><br/><br/>
+                <p>
+                  Sollte es wegen fehlenden Berechtigungen während der Installation
+                  zu Problemen kommen, können Sie mit dem Zusatz <kbd>sudo</kbd> vor
+                  dem apt-get Kommando die benötigten Rechte erlangen.
+                </p>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '2. Öffnen Sie das Installationsverzeichnis des Webservers',
+            body:
+              <p>
+                Unter Linux werden Softwarepakete in der Regel im <strong>/etc</strong> Verzeichnis
+                in einem eigenen Ordner installiert. Nutzen Sie die bekannten Befehle, um in diesen
+                Ordner zu gelangen.
+              </p>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Nutzen Sie den <strong>cd</strong> Befehl (Change Directory), um in das
+                  Installationsverzeichnis des Apache2 Webservers zu gelangen.
+                </p>
+                <kbd>cd /etc/apache2</kbd>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '3. Konfigurieren Sie den Webserver für den Port 8080',
+            body:
+              <div>
+                <p>
+                  Damit Sie eine weitere Webseite über den selben Webserver ausliefern können, müssen
+                  Sie zunächst einen zweiten Port konfigurieren auf welchen der Server horchen soll.
+                  Anschließend können Sie den Port 8080 für die zweite Webseite nutzen, während die
+                  bereits vorhandene Standardseite weiterhin über den Port 80 ausgeliefert wird.
+                </p>
+                <p>
+                  Nehmen Sie die Konfiguration der Ports in der dazugehörigen <strong>ports.conf</strong> Datei vor.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Öffnen Sie dafür zunächst die Datei mit Hilfe des <strong>nano</strong> Kommandos wie folgt.
+                </p>
+                <kbd>nano /etc/bind/named.conf.options</kbd><br/><br/>
+                <p>
+                  Fügen Sie anschließend <strong>Listen 8080</strong> in die Datei ein. Passen Sie hierbei auf,
+                  dass Sie die Zeile nicht innerhalb der dort hinterlegten IF-Abfragen für HTTPS über 443 hinzufügen.
+                </p>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '3. Legen Sie einen neuen Virtual Host an',
+            body:
+              <div>
+                <p>
+                  Mit dem Anlegen eines neuen Virtual Hosts, signalisieren wir dem Webserver, dass er für noch eine
+                  weitere Webseite zuständig ist. Bei der Konfiguration dieses Virtual Hosts müssen wir daher dem
+                  Server mitgeben, über welchen Port die Webseite angefordert wird und wo die Dateien der Webseite
+                  im Filesystem zu finden sind (DocumentRoot).
+                </p>
+                <p>
+                  Als Vorlage für den neuen Virtual Host können Sie die <strong>sites-available/000-default.conf</strong> nutzen.
+                  Ähnlich wie Sie es zuvor bei dem Nameserver getan hatten, können Sie diese Datei kopieren und anschließend
+                  wie gewünscht anpassen.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p>
+                  Kopieren Sie die Vorlage mit Hilfe des folgenden Kommandos.
+                </p>
+                <kbd>cp sites-available/000-default.conf sites-available/webseite2.conf</kbd><br/><br/>
+                <p>
+                  Öffnen Sie die kopierte Datei mit dem nano Kommando und nehmen Sie die folgenden Anpassungen vor.
+                </p>
+                <kbd>VirtualHost *:8080</kbd><br/>
+                <kbd>DocumentRoot /var/www/webseite2</kbd>
               </div>
           },
         ]
