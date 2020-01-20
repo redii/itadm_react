@@ -237,24 +237,64 @@ const viewsArray = [
             ],
             rows: [
               {
-                ip: "123.123.123.123",
+                ip: "138.68.76.99",
                 user: "root",
-                pass: "qwe123"
+                pass: "afd7223bad5bd7fe2e250a9b64"
               },
               {
-                ip: "567.567.567.567",
+                ip: "139.59.148.55",
                 user: "root",
-                pass: "123wer"
+                pass: "68deb1afc164c26f4868bd00ea"
               },
               {
-                ip: "345.345.345.345",
+                ip: "138.68.75.198",
                 user: "root",
-                pass: "jhg564"
+                pass: "bdd89a7d53d190bf4998b72bce"
               },
               {
-                ip: "312.321.321.321",
+                ip: "157.230.120.94",
                 user: "root",
-                pass: "hgj234"
+                pass: "ffd8c3f85f1616b1a9ddaed19a"
+              },
+              {
+                ip: "138.68.77.165",
+                user: "root",
+                pass: "8ad5beba75b923a6efad14edcb"
+              },
+              {
+                ip: "167.71.53.56",
+                user: "root",
+                pass: "1efbdeef67dad4be8b9cf5ed6d"
+              },
+              {
+                ip: "142.93.167.149",
+                user: "root",
+                pass: "34cb9c532c77c02a7dd1a71288"
+              },
+              {
+                ip: "139.59.211.214",
+                user: "root",
+                pass: "261177f6a434b76797915e456d"
+              },
+              {
+                ip: "165.22.83.57",
+                user: "root",
+                pass: "4c125ab6233719526c7535d86d"
+              },
+              {
+                ip: "68.183.79.169",
+                user: "root",
+                pass: "56d71732f76101c2fb78327250"
+              },
+              {
+                ip: "138.68.74.101",
+                user: "root",
+                pass: "38e86e0f86ff395e854e97228d"
+              },
+              {
+                ip: "167.71.60.146",
+                user: "root",
+                pass: "ddf1d500837a614ee486e77db8"
               },
             ]
           },
