@@ -1059,6 +1059,90 @@ const viewsArray = [
                 </p>
               </div>
           },
+          {
+            type: "paragraph",
+            title: '2. Öffnen Sie das Installationsverzeichnis der Software',
+            body:
+              <div>
+                <p>
+                Wie auch bei den vorherigen Serverlösungen befindet sich die Software unter "/etc/squid". Nutzen Sie die Commands ihres Betriebssystems, um in diesesn Ornder zu navigieren.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p className="text-muted">
+                Mit dem folgenden Command kommen Sie in das Standard Installationsverzeichnis der Software:
+                </p>
+                <kbd>cd /etc/squid</kbd><br/><br/>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '3. Konfigurieren Sie eine Access Control List für den Proxy',
+            body:
+              <div>
+                <p>
+                  In der Konfigurationsdatei squid.conf können Sie an oberster Stelle neue ACLs konfigurieren. Öffnen Sie dazu die Datei und fügen Sie die benötigten Parameter ganz oben in der Datei hinzu.<br/><br/>
+                  Sie können Domains entweder direkt in der Konfigurationsdatei oder in einer ausgelagerten Datei hinterlegen. Blockieren Sie die folgenden Domains:
+                </p>
+                <ul>
+                  <li>.mario-pizza.de</li>
+                  <li>.luigis-restaurants.de</li>
+                  <li>.google.com</li>
+                </ul>
+                <p className="text-muted">
+                  Eine genaue Funktionsbeschreibung zur Bedienung von APT finden
+                  Sie <a href="https://wiki.squid-cache.org/SquidFaq/SquidAcl#How_do_I_implement_an_ACL_ban_list.3F" target="_blank" rel="noopener noreferrer">hier</a>.
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p className="text-muted">
+                Öffnen Sie die Konfigurationsdatei und fügen Sie den benötigten Parameter hinzu:
+                </p>
+                <kbd>nano squid.conf</kbd><br/><br/>
+                <kbd>
+                  acl badurls dstdomain /etc/squid/badurls.acl<br/>
+                  http_access deny badurls
+                </kbd><br/><br/>
+                <p>
+                  Legen Sie nun die ACL-Datei an und füllen Sie diese:
+                </p>
+                <ul>
+                  <li>.mario-pizza.de</li>
+                  <li>.luigis-restaurants.de</li>
+                  <li>.google.com</li>
+                </ul>
+              </div>
+          },
+          {
+            type: "paragraph",
+            title: '4. Starten Sie den Proxy neu und prüfen Sie dessen Funktionalität',
+            body:
+              <div>
+                <p>
+                  Durch den Restart werden die Konfigurationsdateien neu eingelesen. Sollte innerhalb dieser Dateien ein Fehler vorliegen, wird dies hierbei bemerkbar.<br/><br/>
+                  Installieren Sie nach dem Neustart des Serverdienstes den Firefox Browser auf ihrem Windows-System und hinterlegen Sie in den Einstellungen des Browsers den Proxy mit der IP-Adresse Ihres Serversystems sowie dem Port 3128. Ab diesem Zeitpunkt läuft jeder HTTP-Request über den konfigurierten Proxy-Server.<br/><br/>
+                  Inwiefern funktionieren die Blockierungen der einzelnen Webseiten? Wie erklären Sie sich das Verhalten des Proxys?
+                </p>
+              </div>
+          },
+          {
+            type: "hint",
+            body:
+              <div>
+                <p className="text-muted">
+                  Starten Sie den Server neu mit Hilfe des folgenden Kommandos:
+                </p>
+                <kbd>service squid restart</kbd><br/><br/>
+              </div>
+          },
         ]
       }
 
