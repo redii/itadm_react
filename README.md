@@ -3,6 +3,10 @@
 [![dependencies](https://david-dm.org/redii/itadm.svg)](https://david-dm.org/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+# Eingestellt
+
+Dieses Projekt habe ich eingestellt, da die React Anwendung großen Overhead gebracht hat und das Bearbeiten des Contents in der JSON Datei unübersichtlich ist. Ich habe im Zuge der Neuentwicklung meiner Webseite umgezogen. Die Inhalte können Sie weiterin unter [itadm.akmnn.de](https://akmnn.de/itadm/) finden, die Inhalte der Webseite im Hintergrund liegen nun im [skipper](https://github.com/redii/skipper/blob/master/hugo/content/itadm/_index.md) Repository.
+
 ## 👨‍🎓 Über diese Anwendung...
 Gelegentlich unterrichte ich am TA Bildungszentrum in dem Lehrgang **IT-Administrator (IHK)** verschiedene fachbezogene IT-Themen. Für diese Tätigkeit habe ich ursprünglich eine Plattform benötigt, über welche ich meine **Unterrichtsunterlagen sowie Aufgabenstellungen** für Teilnehmer schnell und einfach zugänglich zur Verfügung stellen kann. Aus diesem Anspruch heraus ist in mehreren Iterationen eben diese Webanwendung entstanden.
 
